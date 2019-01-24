@@ -22,14 +22,13 @@ class Instructor extends Person {
     this.catchPhrase = attributes.catchPhrase;
 }
 demo() {
-
+return `Today we are learning about ${this.subject}`
 }
 
 grades(){
-
+   return `${this.name} receives a perfect score on ${this.subject}`
 }
 }
-
 class Student extends Instructor {
     constructor(attributes){
     super(attributes);
@@ -38,27 +37,28 @@ class Student extends Instructor {
     this.favSubjects = attributes.favSubjects;
     }
     listsSubjects(){
-
+        
     }
 
     PRAssignment(){
-
+        return `${student.name} has submitted a PR for {subject}`
     }
     sprintChallenge(){
-
+        return `${student.name} has begun sprint challenge on {subject} `
     }
 }
 
     class Project_Mananger extends Student {
         constructor(attributes){
+         super(attributes);
          this.gradClassName = attributes.gradClassName;
          this.favInstructor = attributes.favInstructor;  
         }
         standUp(){
-
+            return `${this.name} announces to {channel}, @channel standy times!​​​​​`;
         }
         debugsCode(){
-
+            return `${this.name} debugs {student.name}'s code on {subject}`;
         }
 
 
@@ -70,7 +70,7 @@ class Student extends Instructor {
         gender: 'male',
         favLanguage: 'JavaScript',
         specialty: 'Front-end',
-        catchPhrase: `Ask the Big Boss`
+        catchPhrase: "Ask the Big Boss"
       });
 
       const bob = new Instructor({
@@ -80,7 +80,7 @@ class Student extends Instructor {
         gender: 'male',
         favLanguage: 'CSS',
         specialty: 'Front-end',
-        catchPhrase: `Get the practice in`
+        catchPhrase: "Get the practice in"
       });
 
       const cathy = new Student({
@@ -125,5 +125,9 @@ class Student extends Instructor {
       });
 
 
-
+    console.log(don.speak());
+    console.log(don.grades());
+    // console.log();
+    // console.log();
+    // console.log();
       
