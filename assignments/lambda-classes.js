@@ -21,12 +21,15 @@ class Instructor extends Person {
     this.favLanguage = attributes.favLanguage;
     this.catchPhrase = attributes.catchPhrase;
 }
-demo() {
-return `Today we are learning about ${this.subject}`
-}
+demo(subject) {
+   return `Today we are learning about ${subject}`
+    
+ }   
+    
 
-grades(){
-   return `${this.name} receives a perfect score on ${this.subject}`
+
+grades(student,subject){
+   return `${student.name} receives a perfect score on ${subject}`
 }
 }
 class Student extends Instructor {
@@ -37,7 +40,10 @@ class Student extends Instructor {
     this.favSubjects = attributes.favSubjects;
     }
     listsSubjects(){
-        
+       return this.favSubjects.forEach(function(item) {
+           console.log(item);
+        });
+
     }
 
     PRAssignment(){
@@ -90,7 +96,7 @@ class Student extends Instructor {
         gender: 'female',
         previousBackground: "fastfood",
         className: "CS1",
-        favSubjects: "HTML"
+        favSubjects: ['Html', 'CSS', 'JavaScript']
       });
 
         const don = new Student({
@@ -101,7 +107,7 @@ class Student extends Instructor {
         favLanguage: 'JavaScript',
         previousBackground: "none",
         className: "CS12",
-        favSubjects: "CSS"
+        favSubjects: ['Html', 'CSS', 'JavaScript']
       });
 
       const edd = new Project_Mananger({
@@ -126,8 +132,8 @@ class Student extends Instructor {
 
 
     console.log(don.speak());
-    console.log(don.grades());
-    // console.log();
-    // console.log();
+    console.log(adam.grades(don,"CSS"));
+    console.log(adam.demo("CSS"));
+    don.listsSubjects();
     // console.log();
       
