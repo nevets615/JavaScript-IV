@@ -32,7 +32,7 @@ grades(student,subject){
    return `${student.name} receives a perfect score on ${subject}`
 }
 }
-class Student extends Instructor {
+class Student extends Person {
     constructor(attributes){
     super(attributes);
     this.previousBackground = attributes.previousBackground;
@@ -50,11 +50,11 @@ class Student extends Instructor {
         return `${this.name} has submitted a PR for ${subject}`
     }
     sprintChallenge(subject){
-        return `${student.name} has begun sprint challenge on ${subject} `
+        return `${this.name} has begun sprint challenge on ${subject} `
     }
 }
 
-    class Project_Mananger extends Student {
+    class Project_Mananger extends Instructor {
         constructor(attributes){
          super(attributes);
          this.gradClassName = attributes.gradClassName;
@@ -137,4 +137,6 @@ class Student extends Instructor {
     console.log(cathy.PRAssignment("css"));
     console.log(edd.standUp("web17"));
     console.log(frank.debugsCode("cathy","css"));
-    
+    console.log(cathy.sprintChallenge("css"))
+
+
