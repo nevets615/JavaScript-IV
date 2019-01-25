@@ -46,11 +46,11 @@ class Student extends Instructor {
 
     }
 
-    PRAssignment(){
-        return `${student.name} has submitted a PR for {subject}`
+    PRAssignment(subject){
+        return `${this.name} has submitted a PR for ${subject}`
     }
-    sprintChallenge(){
-        return `${student.name} has begun sprint challenge on {subject} `
+    sprintChallenge(subject){
+        return `${student.name} has begun sprint challenge on ${subject} `
     }
 }
 
@@ -60,11 +60,11 @@ class Student extends Instructor {
          this.gradClassName = attributes.gradClassName;
          this.favInstructor = attributes.favInstructor;  
         }
-        standUp(){
-            return `${this.name} announces to {channel}, @channel standy times!​​​​​`;
+        standUp(channel){
+            return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
         }
-        debugsCode(){
-            return `${this.name} debugs {student.name}'s code on {subject}`;
+        debugsCode(student,subject){
+            return `${this.name} debugs ${student}'s code on ${subject}`;
         }
 
 
@@ -134,6 +134,7 @@ class Student extends Instructor {
     console.log(don.speak());
     console.log(adam.grades(don,"CSS"));
     console.log(adam.demo("CSS"));
-    don.listsSubjects();
-    // console.log();
-      
+    console.log(cathy.PRAssignment("css"));
+    console.log(edd.standUp("web17"));
+    console.log(frank.debugsCode("cathy","css"));
+    
